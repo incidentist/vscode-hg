@@ -1000,6 +1000,7 @@
         "format": "prettier --write .",
         "format-check": "prettier --check .",
         "test": "node ./out/test/runTest.js",
+        "test:integration": "node ./out/test/integration/runIntegrationTest.js",
         "watch": "tsc -watch -p ./"
     },
     "dependencies": {
