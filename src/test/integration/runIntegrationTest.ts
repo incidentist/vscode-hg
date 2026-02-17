@@ -27,8 +27,13 @@ async function main() {
         // The path to the integration test runner
         const extensionTestsPath = path.resolve(__dirname, "./suite/index");
 
+        // Use a pre-installed VS Code if VSCODE_EXECUTABLE_PATH is set,
+        // otherwise download VS Code automatically.
+        const vscodeExecutablePath = process.env.VSCODE_EXECUTABLE_PATH;
+
         // Download VS Code, unzip it and run the integration test
         await runTests({
+            vscodeExecutablePath,
             extensionDevelopmentPath,
             extensionTestsPath,
             // First arg is the workspace folder to open
